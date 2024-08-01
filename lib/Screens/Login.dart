@@ -1,6 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:trendify/constants/styles/textThemeStyles.dart';
+import 'package:trendify/Screens/SignUP.dart';
+import 'package:trendify/common/styles/textThemeStyles.dart';
+import 'package:trendify/common/widgets/buttonWidget.dart';
+
+import '../common/widgets/socialMedia_buttons.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -76,12 +80,8 @@ class _LoginState extends State<Login> {
                     onPressed: (){
 
                     }, child: Text('Sign In', style: textStyleWhite()),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: CupertinoColors.activeBlue,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)
-                  )
-                ),),
+                style: elevatedButtonStyle(),
+                ),
               ),
               SizedBox(height: 10),
               Container(
@@ -89,7 +89,7 @@ class _LoginState extends State<Login> {
                 height: 50,
                 child: ElevatedButton(
                   onPressed: () {
-
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> Signup()));
                 },child: Text('Create Account', style: textStyle3(),),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
@@ -110,48 +110,7 @@ class _LoginState extends State<Login> {
                 child: Text('Or Sign In With', style: TextStyle(fontSize: 13, color: Colors.grey.shade500, fontWeight: FontWeight.w500)),
               ),
               SizedBox(height: 30),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-
-                children: [
-                  Container(
-                    width: 50,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                        width: 2,
-                        color: Colors.grey.shade200
-                      )
-                    ),
-                    child: IconButton(
-                      icon: Image.asset('assets/images/google logo.png'),
-                      onPressed: (){
-
-                      },
-                    ),
-                  ),
-                  SizedBox(width: 20,),
-                  Container(
-                    width: 50,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                        width: 2,
-                        color: Colors.grey.shade200
-                      )
-                      // borderRadius: BorderRadius.circular(12)
-                    ),
-                    child: IconButton(
-                      icon: Image.asset('assets/images/facebook logo.png'),
-                      onPressed: (){
-
-                      },
-                    ),
-                  )
-                ],
-              )
+              socialMedia_buttons()
             ],
 
           ),
@@ -160,3 +119,5 @@ class _LoginState extends State<Login> {
     );
   }
 }
+
+
