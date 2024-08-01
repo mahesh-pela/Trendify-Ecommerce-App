@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:trendify/Screens/Favourite/favouriteScreen.dart';
 
 class NavigationMenu extends StatefulWidget {
   const NavigationMenu({super.key});
@@ -12,7 +13,7 @@ class NavigationMenu extends StatefulWidget {
 class _NavigationMenuState extends State<NavigationMenu> {
   //adding state variable to track the current index
   int _currentIndex = 0;
-  final screens = [Container(color: Colors.green), Container(color: Colors.blueAccent), Container(color: Colors.pink), Container(color: Colors.yellow)];
+  final screens = [Container(color: Colors.green), const Favouritescreen(), Container(color: Colors.pink), Container(color: Colors.yellow)];
 
   @override
   Widget build(BuildContext context) {
