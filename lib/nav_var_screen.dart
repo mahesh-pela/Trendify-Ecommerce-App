@@ -10,6 +10,10 @@ class NavigationMenu extends StatefulWidget {
 }
 
 class _NavigationMenuState extends State<NavigationMenu> {
+  //adding state variable to track the current index
+  int _currentIndex = 0;
+  final screens = [Container(color: Colors.green), Container(color: Colors.blueAccent), Container(color: Colors.pink), Container(color: Colors.yellow)];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +22,13 @@ class _NavigationMenuState extends State<NavigationMenu> {
         backgroundColor: CupertinoColors.white,
         height: 80,
         elevation: 0,
-        selectedIndex: 1,
+        selectedIndex: _currentIndex,
+        onDestinationSelected: (index){
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+
         destinations: const[
           NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
           NavigationDestination(icon: Icon(Iconsax.heart), label: 'Favourite'),
@@ -26,7 +36,9 @@ class _NavigationMenuState extends State<NavigationMenu> {
           NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile',)
         ],
       ),
-      body: Container(),
+      body: screens[_currentIndex],
     );
   }
 }
+
+
