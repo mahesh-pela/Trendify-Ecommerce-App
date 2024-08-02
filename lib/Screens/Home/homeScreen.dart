@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:trendify/Screens/Home/imageSlider.dart';
 import 'package:trendify/common/styles/textThemeStyles.dart';
 
 class Homescreen extends StatefulWidget {
@@ -26,8 +27,10 @@ class _HomescreenState extends State<Homescreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               searchBar(),
-              SizedBox(height: 10),
-              Text('Categories', style: headLines())
+              SizedBox(height: 20,),
+              Imageslider(),
+              SizedBox(height: 12),
+              Text('Categories', style: headLines()),
             ],
           ),
         ),
