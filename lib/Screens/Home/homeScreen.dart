@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:trendify/Screens/Home/imageSlider.dart';
+import 'package:trendify/Screens/Home/ImageSlider/imageSlider.dart';
 import 'package:trendify/common/styles/textThemeStyles.dart';
+
+import '../../common/widgets/categories.dart';
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
@@ -12,6 +14,8 @@ class Homescreen extends StatefulWidget {
 }
 
 class _HomescreenState extends State<Homescreen> {
+  int currentSlider = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,41 +30,24 @@ class _HomescreenState extends State<Homescreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              /// -----searchBar-------
               searchBar(),
               SizedBox(height: 20,),
-              Imageslider(),
+
+              ///------slider------
+              Imageslider(currentSlide: currentSlider, onChange: (value){
+                setState(() {
+                  currentSlider = value;
+                });
+              }),
               SizedBox(height: 12),
+
               Text('Categories', style: headLines()),
               SizedBox(height: 10),
 
-              SizedBox(
-                height: 100,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 10,
-                    itemBuilder: (context, index){
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 5),
-                        child: Column(
-                          children: [
-                            Container(
-                              width: 56,
-                              height: 56,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(100)
-                              ),
-                              child: ClipOval(
-                                child: Image.asset('assets/images/categories/shoes.jpg', fit: BoxFit.cover,),
-                              )
-                              ),
-                            SizedBox(height: 5,),
-                            Text('Shoes', style: textStyle2(),)
-                          ],
-                        ),
-                      );
-                    },
-              )
-              ),
+              ///-----categories section----------
+              categories(),
+
           ]
           ),
         ),
@@ -105,3 +92,4 @@ class _HomescreenState extends State<Homescreen> {
           );
   }
 }
+
