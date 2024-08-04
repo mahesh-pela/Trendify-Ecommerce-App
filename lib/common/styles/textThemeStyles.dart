@@ -64,3 +64,11 @@ TextStyle welcomeStyle2(){
     fontWeight: FontWeight.w700
   );
 }
+
+TextStyle textStyle21(){
+  return TextStyle(
+    fontWeight: FontWeight.bold,
+    fontSize: 21,
+    color: Colors.black87
+  );
+}

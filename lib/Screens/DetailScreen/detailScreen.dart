@@ -4,6 +4,7 @@ import 'package:trendify/Screens/DetailScreen/detailAppBar.dart';
 import 'package:trendify/Screens/DetailScreen/detailImageSlider.dart';
 import 'package:trendify/Screens/DetailScreen/itemDetails.dart';
 import 'package:trendify/common/constants.dart';
+import 'package:trendify/common/styles/textThemeStyles.dart';
 
 import '../../common/widgets/products/product_model.dart';
 
@@ -55,7 +56,7 @@ class _DetailscreenState extends State<Detailscreen> {
                     )
                 ),
 
-                ///--------detailed screen--------
+                ///--------item details--------
                 SizedBox(height: 20),
                 Container(
                   width: double.infinity,
@@ -74,9 +75,11 @@ class _DetailscreenState extends State<Detailscreen> {
                   ),
 
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Itemdetails(product: widget.product)
+                      Itemdetails(product: widget.product),
+                      SizedBox(height: 20),
+                      Text('Colors', style: textStyle21())
                     ],
                   )
                 )

@@ -14,14 +14,15 @@ class Itemdetails extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(product.title, style: textStyle3(),),
+        Text(product.title, style: headLines(),),
         SizedBox(height: 5),
         Text("\$${product.price}", style: textStyle3()),
         SizedBox(height: 10),
 
-        /// ----- for orange color container that contains the star and the rating-------
+
         Row(
           children: [
+            /// ----- for orange color container that contains the star and the rating-------
             Container(
               width: 48,
               height: 23,
