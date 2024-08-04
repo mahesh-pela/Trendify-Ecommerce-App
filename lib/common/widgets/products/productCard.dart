@@ -1,4 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:trendify/common/constants.dart';
 import 'package:trendify/common/styles/shadows.dart';
 import 'package:trendify/common/styles/textThemeStyles.dart';
@@ -23,6 +25,7 @@ class Productcard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Icon(Icons.favorite_outlined, color: kprimaryColor, ),
                 Center(
                   child: Image.asset(product.image,
                   width: 130,
@@ -31,10 +34,39 @@ class Productcard extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 10),
+
+                ///---------Popular Products Title-----------
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.only(left: 5),
                   child: Text(product.title, style: textStyle3(),),
                 ),
+                SizedBox(height: 10),
+
+                ///Price and Color------------
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("\$${product.price}", style: textStyle2(),),
+                      Row(
+                        children: List.generate(
+                            product.colors.length,
+                            (index) =>Container(
+                              width: 14,
+                              height: 14,
+                              margin: EdgeInsets.only(right: 4),
+                              decoration: BoxDecoration(
+                                color: product.colors[index],
+                                shape: BoxShape.circle,
+                              ),
+                            )
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+
               ],
             ),
           )

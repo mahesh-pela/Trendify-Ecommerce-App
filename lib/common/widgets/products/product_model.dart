@@ -83,7 +83,7 @@ final List<Product> products = [
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       review: "(220 Reviews)",
       seller: "Deeya Malla",
-      image: 'assets/images/products/wireless headphones.png',
+      image: 'assets/images/products/wireless headphone.png',
       price: 2300,
       colors: [
         CupertinoColors.black,
