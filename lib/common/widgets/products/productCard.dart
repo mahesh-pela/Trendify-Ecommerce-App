@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:trendify/Screens/DetailScreen/detailScreen.dart';
 import 'package:trendify/common/constants.dart';
 import 'package:trendify/common/styles/shadows.dart';
 import 'package:trendify/common/styles/textThemeStyles.dart';
@@ -13,7 +14,9 @@ class Productcard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){},
+      onTap: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context) => Detailscreen(product: product,)));
+      },
       child: Stack(
         children: [
           Container(

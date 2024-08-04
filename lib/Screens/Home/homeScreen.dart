@@ -37,11 +37,18 @@ class _HomescreenState extends State<Homescreen> {
               SizedBox(height: 20,),
 
               ///------slider------
-              Imageslider(currentSlide: currentSlider, onChange: (value){
+              Imageslider(
+                  currentSlide: currentSlider, onChange: (value){
                 setState(() {
                   currentSlider = value;
                 });
-              }),
+              },
+              imagePaths: [
+                'assets/images/slider.jpg',
+                'assets/images/slider2.png',
+                'assets/images/slider3.png',
+              ],
+              ),
               SizedBox(height: 12),
 
               Text('Categories', style: headLines()),
