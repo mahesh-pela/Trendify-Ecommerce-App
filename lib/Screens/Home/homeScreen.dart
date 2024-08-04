@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:trendify/Screens/Home/ImageSlider/imageSlider.dart';
 import 'package:trendify/common/styles/textThemeStyles.dart';
+import 'package:trendify/common/widgets/products/productCard.dart';
+import 'package:trendify/common/widgets/products/product_model.dart';
 
 import '../../common/widgets/categories.dart';
 
@@ -47,6 +49,25 @@ class _HomescreenState extends State<Homescreen> {
 
               ///-----categories section----------
               categories(),
+              SizedBox(height: 15),
+
+              ///-----Popular Products--------
+              Text('Popular Products', style: headLines()),
+              SizedBox(height: 15),
+              GridView.builder(
+                physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: 0.78
+                  ),
+                itemCount: products.length,
+                itemBuilder: (context, index){
+                    return Productcard(
+                        product: products[index],
+                    );
+                }
+              )
 
           ]
           ),
