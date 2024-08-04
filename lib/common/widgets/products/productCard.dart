@@ -25,7 +25,7 @@ class Productcard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Icon(Icons.favorite_outlined, color: kprimaryColor, ),
+                Icon(Icons.favorite_outlined, color: kprimaryColor),
                 Center(
                   child: Image.asset(product.image,
                   width: 130,
