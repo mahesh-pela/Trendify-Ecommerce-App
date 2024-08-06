@@ -18,7 +18,7 @@ class Detailscreen extends StatefulWidget {
 
 class _DetailscreenState extends State<Detailscreen> {
   int currentImage = 0;
-  int currentSlide = 0;
+  int currentColor = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -80,8 +80,37 @@ class _DetailscreenState extends State<Detailscreen> {
                       Itemdetails(product: widget.product),
                       SizedBox(height: 20),
                       Text('Colors', style: textStyle21()),
-                      Container(
-
+                      SizedBox(height: 10),
+                      Row(
+                        children:
+                          List.generate(
+                              widget.product.colors.length,
+                              (index) => GestureDetector(
+                                onTap: (){
+                                  setState(() {
+                                    currentColor == index;
+                                  });
+                                },
+                                child: AnimatedContainer(
+                                  duration: Duration(milliseconds: 300),
+                                  width: 35,
+                                  height: 35,
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: currentColor == index ? Colors.white : widget.product.colors[index],
+                                      border: currentColor == index ? Border.all(color: widget.product.colors[index]): null,
+                                  ),
+                                  padding: currentColor == index ? EdgeInsets.all(2) : null,
+                                  margin: EdgeInsets.only(right: 5),
+                                  child: Container(
+                                    width: 30,
+                                    height: 30,
+                                    decoration: BoxDecoration(color: widget.product.colors[index],
+                                    shape: BoxShape.circle),
+                                  ),
+                                ),
+                              )
+                          )
                       )
                     ],
                   )
