@@ -43,7 +43,7 @@ class Productcard extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 5),
                   child: Text(product.title, style: textStyle3(),),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 2),
 
                 ///Price and Color------------
                 Padding(

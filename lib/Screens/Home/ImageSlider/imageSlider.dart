@@ -46,7 +46,7 @@ class Imageslider extends StatelessWidget {
               margin: EdgeInsets.only(right: 3),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: currentSlide == index ? CupertinoColors.activeBlue : Colors.transparent,
+                color: currentSlide == index ? Colors.grey : Colors.transparent,
                 border: Border.all(color: CupertinoColors.black)
               ),
             )

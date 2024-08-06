@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:trendify/Screens/Home/ImageSlider/imageSlider.dart';
+import 'package:trendify/common/constants.dart';
 import 'package:trendify/common/styles/textThemeStyles.dart';
 import 'package:trendify/common/widgets/products/productCard.dart';
 import 'package:trendify/common/widgets/products/product_model.dart';
@@ -22,9 +24,7 @@ class _HomescreenState extends State<Homescreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: CupertinoColors.white,
-      appBar: AppBar(
-        title: Text('Ecommerce App'),
-      ),
+      appBar: home_AppBar(),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Padding(
@@ -59,7 +59,13 @@ class _HomescreenState extends State<Homescreen> {
               SizedBox(height: 15),
 
               ///-----Popular Products--------
-              Text('Popular Products', style: headLines()),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('Popular Products', style: headLines()),
+                  Text('See All', style: textStyle2(),)
+                ],
+              ),
               SizedBox(height: 15),
               GridView.builder(
                 physics: NeverScrollableScrollPhysics(),
@@ -82,6 +88,19 @@ class _HomescreenState extends State<Homescreen> {
           ),
         ),
       ),
+    );
+  }
+
+  AppBar home_AppBar() {
+    return AppBar(
+      backgroundColor: CupertinoColors.white,
+      actions: [
+        IconButton(
+          style: IconButton.styleFrom(backgroundColor: kcontentColor),
+          onPressed: (){},
+          icon: Icon(Icons.notifications_none,color: Colors.grey.shade700)
+        )
+      ],
     );
   }
 

@@ -79,7 +79,10 @@ class _DetailscreenState extends State<Detailscreen> {
                     children: [
                       Itemdetails(product: widget.product),
                       SizedBox(height: 20),
-                      Text('Colors', style: textStyle21())
+                      Text('Colors', style: textStyle21()),
+                      Container(
+
+                      )
                     ],
                   )
                 )
