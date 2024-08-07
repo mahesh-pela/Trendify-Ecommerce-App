@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:trendify/Screens/DetailScreen/addToCart.dart';
 import 'package:trendify/Screens/DetailScreen/description.dart';
 import 'package:trendify/Screens/DetailScreen/detailAppBar.dart';
 import 'package:trendify/Screens/DetailScreen/detailImageSlider.dart';
@@ -26,13 +27,17 @@ class _DetailscreenState extends State<Detailscreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kcontentColor,
+
+      ///------for add to cart floating action Button-------------
+      floatingActionButton: AddToCart(product: widget.product),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: SafeArea(
           child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
 
-            ///-------AppBar(back, share, favourite)------------
+            ///-------AppBar(back, share, favourite)------------///
             DetailAppbar(),
             SizedBox(height: 20),
 
@@ -131,6 +136,7 @@ class _DetailscreenState extends State<Detailscreen> {
                 ),
 
             ),
+            SizedBox(height: 10,),
           ],
         ),
       )),

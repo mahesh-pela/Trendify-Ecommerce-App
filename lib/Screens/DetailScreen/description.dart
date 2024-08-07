@@ -1,3 +1,7 @@
+/*
+ This part contains the description, specifications and Reviews section of the specific product clicked on
+ */
+
 import 'package:flutter/cupertino.dart';
 import 'package:trendify/common/constants.dart';
 import 'package:trendify/common/styles/textThemeStyles.dart';

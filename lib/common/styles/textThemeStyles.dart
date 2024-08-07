@@ -80,3 +80,11 @@ TextStyle grey_textStyle(){
     fontWeight: FontWeight.w400
   );
 }
+
+TextStyle textStyle18White(){
+  return TextStyle(
+    fontWeight: FontWeight.w600,
+    fontSize: 18,
+    color: CupertinoColors.white
+  );
+}
