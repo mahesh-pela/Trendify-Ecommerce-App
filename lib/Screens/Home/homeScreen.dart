@@ -8,7 +8,7 @@ import 'package:trendify/common/styles/textThemeStyles.dart';
 import 'package:trendify/common/widgets/products/productCard.dart';
 import 'package:trendify/common/widgets/products/product_model.dart';
 
-import '../../common/widgets/categories.dart';
+import '../../common/widgets/categories/categories.dart';
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
@@ -32,6 +32,7 @@ class _HomescreenState extends State<Homescreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+
               /// -----searchBar-------
               searchBar(),
               SizedBox(height: 20,),
@@ -43,6 +44,8 @@ class _HomescreenState extends State<Homescreen> {
                   currentSlider = value;
                 });
               },
+
+                ///--------- Image File path-----------
               imagePaths: [
                 'assets/images/slider.jpg',
                 'assets/images/slider2.png',
@@ -54,9 +57,10 @@ class _HomescreenState extends State<Homescreen> {
               Text('Categories', style: headLines()),
               SizedBox(height: 10),
 
+
               ///-----categories section----------
-              categories(),
-              SizedBox(height: 15),
+              Categories(),
+
 
               ///-----Popular Products--------
               Row(

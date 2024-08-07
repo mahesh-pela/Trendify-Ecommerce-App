@@ -10,6 +10,13 @@ TextStyle textStyle1(){
   );
 }
 
+TextStyle textStyle13(){
+  return TextStyle(
+    fontSize: 13,
+    fontWeight: FontWeight.w600,
+    color: CupertinoColors.black
+  );
+}
 TextStyle textStyle2(){
   return TextStyle(
     fontSize: 14,

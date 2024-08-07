@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:trendify/Providers/cart_provider.dart';
 import 'package:trendify/common/constants.dart';
 import '../../common/styles/textThemeStyles.dart';
 import '../../common/widgets/products/product_model.dart';
@@ -31,6 +32,7 @@ class _AddToCartState extends State<AddToCart> {
   }
   @override
   Widget build(BuildContext context) {
+    final provider = CartProvider.of(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
 
@@ -40,7 +42,7 @@ class _AddToCartState extends State<AddToCart> {
         height: 60,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
-            color: Colors.grey.shade400
+            color: Colors.blueGrey.shade200
         ),
         padding: const EdgeInsets.symmetric(horizontal: 15),
         alignment: Alignment.center,
@@ -54,7 +56,7 @@ class _AddToCartState extends State<AddToCart> {
               height: 40,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
-                border: Border.all(color: CupertinoColors.white, width: 2)
+                border: Border.all(color: CupertinoColors.black, width: 2)
               ),
 
               ///-------- (-, + ) is present-------
@@ -63,12 +65,12 @@ class _AddToCartState extends State<AddToCart> {
                 children: [
                   IconButton(
                       onPressed: decrementValue,
-                      icon: Icon(Icons.remove, color: CupertinoColors.white,)
+                      icon: Icon(Icons.remove, color: CupertinoColors.black,)
                   ),
-                  Text(currentValue.toString(), style: textStyleWhite()),
+                  Text(currentValue.toString(), style: welcomeStyle2()),
                   IconButton(
                       onPressed: incrementValue,
-                      icon: Icon(Icons.add, color: CupertinoColors.white,)
+                      icon: Icon(Icons.add, color: CupertinoColors.black,)
                   ),
                 ],
 
@@ -78,7 +80,11 @@ class _AddToCartState extends State<AddToCart> {
             ///--------Add to Cart--------
             GestureDetector(
               onTap: (){
-
+                provider.toggleFavourite(widget.product);
+                ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Successfully Added', style: TextStyle(fontSize: 16, color: CupertinoColors.white, fontWeight: FontWeight.bold),),
+                  duration: Duration(seconds: 1),));
               },
               child: Container(
                 height: 45,
