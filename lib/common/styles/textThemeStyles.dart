@@ -72,3 +72,11 @@ TextStyle textStyle21(){
     color: Colors.black87
   );
 }
+
+TextStyle grey_textStyle(){
+  return TextStyle(
+    fontSize: 15,
+    color: Colors.grey,
+    fontWeight: FontWeight.w400
+  );
+}

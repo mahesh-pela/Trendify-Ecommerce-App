@@ -10,11 +10,13 @@ class Detailimageslider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 250,
+      height: 220,
       child: PageView.builder(
         onPageChanged: onChange,
           itemBuilder: (context, index){
-            return Image.asset('assets/images/products/wireless headphone.png');
+            return Hero(
+              tag: image,
+                child: Image.asset('assets/images/products/wireless headphone.png'));
           }
       ),
     );

@@ -30,10 +30,13 @@ class Productcard extends StatelessWidget {
               children: [
                 Icon(Icons.favorite_outlined, color: kprimaryColor),
                 Center(
-                  child: Image.asset(product.image,
-                  width: 130,
-                  height: 130,
-                  fit: BoxFit.cover
+                  child: Hero(
+                    tag: product.image,
+                    child: Image.asset(product.image,
+                    width: 130,
+                    height: 130,
+                    fit: BoxFit.cover
+                    ),
                   ),
                 ),
                 SizedBox(height: 10),
