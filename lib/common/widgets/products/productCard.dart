@@ -28,25 +28,25 @@ class Productcard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Icon(Icons.favorite_outlined, color: kprimaryColor),
+                const SizedBox(height: 15,),
                 Center(
                   child: Hero(
                     tag: product.image,
                     child: Image.asset(product.image,
-                    width: 130,
-                    height: 130,
-                    fit: BoxFit.cover
+                    width: 140,
+                    height: 140,
+                    // fit: BoxFit.cover
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
 
                 ///---------Popular Products Title-----------
                 Padding(
                   padding: const EdgeInsets.only(left: 5),
                   child: Text(product.title, style: textStyle3(),),
                 ),
-                SizedBox(height: 2),
+                const SizedBox(height: 2),
 
                 ///Price and Color------------
                 Padding(
@@ -75,6 +75,28 @@ class Productcard extends StatelessWidget {
 
               ],
             ),
+          ),
+
+          ///------ favourite Icon------------
+           Positioned(
+              child: Align(
+               alignment: Alignment.topRight,
+                  child: Container(
+                    width: 37,
+                      height: 37,
+                      decoration: const BoxDecoration(
+                        color: kprimaryColor,
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(20),
+                          bottomLeft: Radius.circular(12),
+                        )
+                      ),
+                      // padding: const EdgeInsets.only(top: 10, right: 20),
+                      child: GestureDetector(
+                        onTap: (){},
+                          child: const Icon(Icons.favorite_border, color: CupertinoColors.white, size: 22))
+                  )
+              )
           )
         ],
 
