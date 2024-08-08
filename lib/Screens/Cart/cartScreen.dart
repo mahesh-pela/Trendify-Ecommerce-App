@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:trendify/Providers/cart_provider.dart';
@@ -18,6 +20,18 @@ class _CartScreenState extends State<CartScreen> {
   Widget build(BuildContext context) {
     final provider = CartProvider.of(context);
     final finalList = provider.cart;
+
+    ///------ for quantity---------
+    productQuantity(IconData icon, int index){
+      return GestureDetector(
+        onTap: (){
+          setState(() {
+            icon == Icons.add? provider.incrementQuantity(index): provider.decrementQuantity(index);
+          });
+        },
+        child: Icon(icon, size: 20,),
+      );
+    }
 
     return Scaffold(
       backgroundColor: Colors.grey.shade300,
@@ -102,12 +116,12 @@ class _CartScreenState extends State<CartScreen> {
                               top: 20,
                               right: 25,
                               child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
                                   IconButton(
                                     onPressed: () {
                                       finalList.removeAt(index);
                                       setState(() {
-
                                       });
                                     },
                                     icon: const Icon(
@@ -116,11 +130,38 @@ class _CartScreenState extends State<CartScreen> {
                                       size: 22,
                                     ),
                                   ),
+                                  SizedBox(height: 10,),
+                                  Container(
+                                    height: 35,
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey.shade300,
+                                      border: Border.all(
+                                        color: Colors.grey.shade200,
+                                        // width: 2
+                                      ),
+                                      borderRadius: BorderRadius.circular(20)
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        SizedBox(width: 10,),
+                                        productQuantity(Icons.add, index),
+                                        SizedBox(width: 10,),
+                                        Text(cartItems.quantity.toString(), style: textStyle2(),),
+                                        SizedBox(width: 10,),
+                                        productQuantity(Icons.remove, index),
+                                        SizedBox(width: 10,)
+                                      ],
+                                    ),
+                                  )
+
+                                  
                                 ],
-                              ))
+                              )
+                          )
                         ],
                       );
-                    }))
+                    })
+            )
           ],
         ),
       ),

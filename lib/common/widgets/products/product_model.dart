@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Product {
+  final String id;
   final String title;
   final String description;
   final String image;
@@ -17,6 +18,7 @@ class Product {
 
 
   Product({
+    required this.id,
     required this.title,
     required this.description,
     required this.review,
@@ -31,7 +33,9 @@ class Product {
 }
 
 final List<Product> products = [
-  Product(title: "Nike Shoes",
+  Product(
+      id: '1',
+      title: "Nike Shoes",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
           "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
           "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
@@ -50,7 +54,9 @@ final List<Product> products = [
       quantity: 1
   ),
 
-  Product(title: "Denim Jacket",
+  Product(
+      id: '2',
+      title: "Denim Jacket",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
           "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
           "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
@@ -69,7 +75,9 @@ final List<Product> products = [
       quantity: 1
   ),
 
-  Product(title: "Seiko Watch",
+  Product(
+      id: '3',
+      title: "Seiko Watch",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
           "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
           "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
@@ -88,7 +96,9 @@ final List<Product> products = [
       quantity: 1
   ),
 
-  Product(title: "Wireless Headphones",
+  Product(
+      id: '4',
+      title: "Wireless Headphones",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
           "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
           "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "

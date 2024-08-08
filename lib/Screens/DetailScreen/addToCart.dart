@@ -15,7 +15,7 @@ class AddToCart extends StatefulWidget {
 }
 
 class _AddToCartState extends State<AddToCart> {
-  int currentValue = 0;
+  int currentValue = 1;
 
   void incrementValue(){
     setState(() {
