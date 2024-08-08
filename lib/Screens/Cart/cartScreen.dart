@@ -141,6 +141,8 @@ class _CartScreenState extends State<CartScreen> {
                                       ),
                                       borderRadius: BorderRadius.circular(20)
                                     ),
+
+                                    ///-------Container that contains (+,-, quantity)
                                     child: Row(
                                       children: [
                                         SizedBox(width: 10,),
