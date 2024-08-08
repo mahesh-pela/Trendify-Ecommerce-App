@@ -41,6 +41,14 @@ TextStyle textStyleWhite(){
   );
 }
 
+TextStyle textStyle16(){
+  return TextStyle(
+    fontSize: 16,
+    color: Colors.black,
+    fontWeight: FontWeight.w600
+  );
+}
+
 TextStyle textStyle3(){
   return TextStyle(
     fontSize: 15,
