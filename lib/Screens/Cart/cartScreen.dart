@@ -3,6 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:trendify/Providers/cart_provider.dart';
+import 'package:trendify/Screens/Cart/checkOutBox.dart';
 import 'package:trendify/common/constants.dart';
 import 'package:trendify/common/styles/textThemeStyles.dart';
 
@@ -34,6 +35,7 @@ class _CartScreenState extends State<CartScreen> {
     }
 
     return Scaffold(
+      bottomSheet: const CheckOutBox(),
       backgroundColor: Colors.grey.shade300,
       body: SafeArea(
         child: Column(
@@ -163,7 +165,7 @@ class _CartScreenState extends State<CartScreen> {
                         ],
                       );
                     })
-            )
+            ),
           ],
         ),
       ),
