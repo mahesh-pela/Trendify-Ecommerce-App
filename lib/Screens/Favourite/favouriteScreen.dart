@@ -1,22 +1,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:trendify/Screens/Home/homeScreen.dart';
+import 'package:trendify/common/constants.dart';
 import 'package:trendify/common/styles/textThemeStyles.dart';
 import 'package:trendify/nav_var_screen.dart';
 
-class Favouritescreen extends StatefulWidget {
-  const Favouritescreen({super.key});
+import 'favourite_provider.dart';
+
+class FavouriteScreen extends StatefulWidget {
+  const FavouriteScreen({super.key});
 
   @override
-  State<Favouritescreen> createState() => _FavouritescreenState();
+  State<FavouriteScreen> createState() => _FavouriteScreenState();
 }
 
-class _FavouritescreenState extends State<Favouritescreen> {
-  final provider = FavouriteProvider.of(context);
-  final finalList = provider.favourite;
-
+class _FavouriteScreenState extends State<FavouriteScreen> {
   @override
   Widget build(BuildContext context) {
+    // final provider = FavouriteProvider.of(context);
+    // final finalList = provider.favourite;
     return Scaffold(
       backgroundColor: Colors.grey.shade300,
       body: SafeArea(
@@ -27,9 +29,57 @@ class _FavouritescreenState extends State<Favouritescreen> {
               child: favouriteAppBar(context),
             ),
             Expanded(
-                child: ListView.builder(
-                    itemBuilder: itemBuilder
-                ),
+              child: ListView.builder(
+                  itemCount: 10,
+                  itemBuilder: (context, index){
+                    return Stack(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 15, right: 15, top: 10, bottom: 10),
+
+                          ///------------------Outer Container-----------------
+                          child: Container(
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              color: CupertinoColors.white,
+                              borderRadius: BorderRadius.circular(20)
+                            ),
+
+                            padding: EdgeInsets.all(10),
+                            ///---------Items inside the Container---------------
+                            child: Row(
+                              children: [
+                                Container(
+                                  width: 100,
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: kcontentColor
+                                  ),
+                                  padding: EdgeInsets.all(10),
+                                  child: Image.asset('assets/images/products/wireless headphone.png'),
+                                ),
+                                SizedBox(width: 20,),
+                                
+                                ///-------------Title,category and price--------
+                                Column(
+                                  children: [
+                                    Text('Title'),
+                                    Text('SubTitle'),
+                                    Text('\$100')
+                                  ],
+                                )
+
+
+                              ],
+                            ),
+                            // height: ,
+                          ),
+                        )
+                      ],
+                    );
+                  }
+              ),
             ),
           ],
         ),
@@ -39,17 +89,23 @@ class _FavouritescreenState extends State<Favouritescreen> {
 
   Row favouriteAppBar(BuildContext context) {
     return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          IconButton(
-              onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> NavigationMenu()));
-              },
-              icon: Icon(Icons.arrow_back_ios, size: 20,)
-          ),
-          Text('Favourite', style: textStyle21(),),
-          Container()
-        ],
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        IconButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => NavigationMenu()));
+            },
+            icon: Icon(
+              Icons.arrow_back_ios,
+              size: 20,
+            )),
+        Text(
+          'Favourite',
+          style: textStyle21(),
+        ),
+        Container()
+      ],
     );
   }
 }

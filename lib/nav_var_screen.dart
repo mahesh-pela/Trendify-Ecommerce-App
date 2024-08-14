@@ -15,7 +15,7 @@ class NavigationMenu extends StatefulWidget {
 class _NavigationMenuState extends State<NavigationMenu> {
   //adding state variable to track the current index
   int _currentIndex = 0;
-  final screens = [const Homescreen(), const Favouritescreen(), const CartScreen(), Container(color: Colors.yellow)];
+  final screens = [const Homescreen(), const FavouriteScreen(), const CartScreen(), Container(color: Colors.yellow)];
 
   @override
   Widget build(BuildContext context) {
