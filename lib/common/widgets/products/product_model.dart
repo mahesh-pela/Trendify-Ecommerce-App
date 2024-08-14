@@ -32,7 +32,7 @@ class Product {
   });
 }
 
-final List<Product> products = [
+final List<Product> all = [
   Product(
       id: '1',
       title: "Nike Shoes",
@@ -105,6 +105,48 @@ final List<Product> products = [
           "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       review: "(220 Reviews)",
       seller: "Deeya Malla",
+      image: 'assets/images/products/wireless headphone.png',
+      price: 2300,
+      colors: [
+        CupertinoColors.black,
+        Colors.blue,
+        Colors.red,
+      ],
+      category: "Electronics",
+      rate: 5.0,
+      quantity: 1
+  ),
+
+  Product(
+      id: '4',
+      title: "Make Up Kits",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+          "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+          "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+          "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      review: "(20 Reviews)",
+      seller: "Deeya Malla",
+      image: 'assets/images/categories/beauty.jpg',
+      price: 2300,
+      colors: [
+        CupertinoColors.black,
+        Colors.blue,
+        Colors.red,
+      ],
+      category: "Beauty",
+      rate: 5.0,
+      quantity: 1
+  ),
+
+  Product(
+      id: '4',
+      title: "",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+          "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+          "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+          "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      review: "(220 Reviews)",
+      seller: "Mahesh Pela",
       image: 'assets/images/products/wireless headphone.png',
       price: 2300,
       colors: [
