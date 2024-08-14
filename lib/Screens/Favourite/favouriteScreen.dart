@@ -31,21 +31,22 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
             Expanded(
               child: ListView.builder(
                   itemCount: 10,
-                  itemBuilder: (context, index){
+                  itemBuilder: (context, index) {
                     return Stack(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(left: 15, right: 15, top: 10, bottom: 10),
+                          padding: const EdgeInsets.only(
+                              left: 15, right: 15, top: 10, bottom: 10),
 
                           ///------------------Outer Container-----------------
                           child: Container(
                             width: double.infinity,
                             decoration: BoxDecoration(
-                              color: CupertinoColors.white,
-                              borderRadius: BorderRadius.circular(20)
-                            ),
+                                color: CupertinoColors.white,
+                                borderRadius: BorderRadius.circular(20)),
 
-                            padding: EdgeInsets.all(10),
+                            padding: const EdgeInsets.all(10),
+
                             ///---------Items inside the Container---------------
                             child: Row(
                               children: [
@@ -53,33 +54,52 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                                   width: 100,
                                   height: 100,
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: kcontentColor
-                                  ),
-                                  padding: EdgeInsets.all(10),
-                                  child: Image.asset('assets/images/products/wireless headphone.png'),
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: kcontentColor),
+                                  padding: const EdgeInsets.all(10),
+                                  child: Image.asset(
+                                      'assets/images/products/wireless headphone.png'),
                                 ),
-                                SizedBox(width: 20,),
-                                
+                                const SizedBox(
+                                  width: 20,
+                                ),
+
                                 ///-------------Title,category and price--------
                                 Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text('Title'),
-                                    Text('SubTitle'),
-                                    Text('\$100')
+                                    Text('Title', style: textStyle16()),
+                                    Text(
+                                      'SubTitle',
+                                      style: grey_textStyle(),
+                                    ),
+                                    SizedBox(
+                                      height: 5,
+                                    ),
+                                    Text(
+                                      '\$100',
+                                      style: textStyle2(),
+                                    )
                                   ],
-                                )
-
-
+                                ),
                               ],
                             ),
-                            // height: ,
                           ),
+                        ),
+
+                        Positioned(
+                            top: 40,
+                            right: 30,
+                            child: IconButton(
+                              onPressed: (){},
+                              icon: Icon(Icons.delete,
+                                color: Colors.red,),
+                            )
                         )
+
                       ],
                     );
-                  }
-              ),
+                  }),
             ),
           ],
         ),
