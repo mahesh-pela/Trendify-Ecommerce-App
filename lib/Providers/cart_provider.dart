@@ -11,7 +11,7 @@ class CartProvider extends ChangeNotifier{
   List<Product> get cart => _cart;
 
   //function to add or increment the product if it already exists
-  void toggleFavourite(Product product){
+  void toggleAddToCart(Product product){
     /// check if the product is already in the cart
     int index = _cart.indexWhere((element) => element.id == product.id);
     if(index != -1){

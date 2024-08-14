@@ -17,8 +17,9 @@ class FavouriteScreen extends StatefulWidget {
 class _FavouriteScreenState extends State<FavouriteScreen> {
   @override
   Widget build(BuildContext context) {
-    // final provider = FavouriteProvider.of(context);
-    // final finalList = provider.favourite;
+    final provider = FavouriteProvider.of(context);
+    final finalList = provider.favourite;
+
     return Scaffold(
       backgroundColor: Colors.grey.shade300,
       body: SafeArea(
@@ -30,8 +31,9 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
             ),
             Expanded(
               child: ListView.builder(
-                  itemCount: 10,
+                  itemCount: finalList.length,
                   itemBuilder: (context, index) {
+                    final favouriteItems = finalList[index];
                     return Stack(
                       children: [
                         Padding(
@@ -58,7 +60,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                                       color: kcontentColor),
                                   padding: const EdgeInsets.all(10),
                                   child: Image.asset(
-                                      'assets/images/products/wireless headphone.png'),
+                                      favouriteItems.image),
                                 ),
                                 const SizedBox(
                                   width: 20,
@@ -68,16 +70,16 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text('Title', style: textStyle16()),
+                                    Text(favouriteItems.title, style: textStyle16()),
                                     Text(
-                                      'SubTitle',
+                                      favouriteItems.category,
                                       style: grey_textStyle(),
                                     ),
                                     SizedBox(
                                       height: 5,
                                     ),
                                     Text(
-                                      '\$100',
+                                      '\$${favouriteItems.price}',
                                       style: textStyle2(),
                                     )
                                   ],
@@ -91,7 +93,11 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                             top: 40,
                             right: 30,
                             child: IconButton(
-                              onPressed: (){},
+                              onPressed: (){
+                                finalList.removeAt(index);
+                                setState(() {
+                                });
+                              },
                               icon: Icon(Icons.delete,
                                 color: Colors.red,),
                             )

@@ -38,7 +38,7 @@ class _DetailscreenState extends State<Detailscreen> {
           children: [
 
             ///-------AppBar(back, share, favourite)------------///
-            DetailAppbar(),
+            DetailAppbar(product: widget.product),
             SizedBox(height: 20),
 
             /// Image Slider-----------

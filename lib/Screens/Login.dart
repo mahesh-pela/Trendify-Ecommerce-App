@@ -89,7 +89,7 @@ class _LoginState extends State<Login> {
                 height: 50,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> Signup()));
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> Signup()));
                 },child: Text('Create Account', style: textStyle3(),),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,

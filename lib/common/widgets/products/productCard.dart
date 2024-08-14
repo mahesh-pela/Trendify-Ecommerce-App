@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:trendify/Screens/DetailScreen/detailScreen.dart';
+import 'package:trendify/Screens/Favourite/favourite_provider.dart';
 import 'package:trendify/common/constants.dart';
 import 'package:trendify/common/styles/shadows.dart';
 import 'package:trendify/common/styles/textThemeStyles.dart';
@@ -13,6 +14,7 @@ class Productcard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final provider = FavouriteProvider.of(context);
     return GestureDetector(
       onTap: (){
         Navigator.push(context, MaterialPageRoute(builder: (context) => Detailscreen(product: product,)));
@@ -93,8 +95,12 @@ class Productcard extends StatelessWidget {
                       ),
                       // padding: const EdgeInsets.only(top: 10, right: 20),
                       child: GestureDetector(
-                        onTap: (){},
-                          child: const Icon(Icons.favorite_border, color: CupertinoColors.white, size: 22))
+                        onTap: (){
+                          provider.toggleFavourite(product);
+                          // ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Added to Favourite')));
+                        },
+                          child: Icon(
+                              provider.isExist(product)?Icons.favorite: Icons.favorite_border, color: CupertinoColors.white, size: 22))
                   )
               )
           )

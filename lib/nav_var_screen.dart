@@ -4,6 +4,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:trendify/Screens/Cart/cartScreen.dart';
 import 'package:trendify/Screens/Favourite/favouriteScreen.dart';
 import 'package:trendify/Screens/Home/homeScreen.dart';
+import 'package:trendify/Screens/Profile/profile.dart';
 
 class NavigationMenu extends StatefulWidget {
   const NavigationMenu({super.key});
@@ -15,7 +16,7 @@ class NavigationMenu extends StatefulWidget {
 class _NavigationMenuState extends State<NavigationMenu> {
   //adding state variable to track the current index
   int _currentIndex = 0;
-  final screens = [const Homescreen(), const FavouriteScreen(), const CartScreen(), Container(color: Colors.yellow)];
+  final screens = [Homescreen(), FavouriteScreen(), CartScreen(), Profile()];
 
   @override
   Widget build(BuildContext context) {

@@ -80,7 +80,7 @@ class _AddToCartState extends State<AddToCart> {
             ///--------Add to Cart--------
             GestureDetector(
               onTap: (){
-                provider.toggleFavourite(widget.product);
+                provider.toggleAddToCart(widget.product);
                 ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
                       content: Text('Successfully Added', style: TextStyle(fontSize: 16, color: CupertinoColors.white, fontWeight: FontWeight.bold),),
