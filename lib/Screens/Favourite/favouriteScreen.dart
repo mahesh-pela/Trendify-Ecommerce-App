@@ -26,7 +26,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(top: 15),
               child: favouriteAppBar(context),
             ),
             Expanded(
@@ -115,17 +115,17 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
 
   Row favouriteAppBar(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        IconButton(
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => NavigationMenu()));
-            },
-            icon: Icon(
-              Icons.arrow_back_ios,
-              size: 20,
-            )),
+        // IconButton(
+        //     onPressed: () {
+        //       Navigator.push(context,
+        //           MaterialPageRoute(builder: (context) => NavigationMenu()));
+        //     },
+        //     icon: Icon(
+        //       Icons.arrow_back_ios,
+        //       size: 20,
+        //     )),
         Text(
           'Favourite',
           style: textStyle21(),

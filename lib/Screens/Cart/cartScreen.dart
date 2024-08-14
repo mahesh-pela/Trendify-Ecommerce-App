@@ -174,20 +174,20 @@ class _CartScreenState extends State<CartScreen> {
 
   Row cart_AppBar(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        IconButton(
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const NavigationMenu()));
-            },
-            icon: const Icon(
-              Icons.arrow_back_ios,
-              size: 20,
-              color: CupertinoColors.black,
-            )),
+        // IconButton(
+        //     onPressed: () {
+        //       Navigator.push(
+        //           context,
+        //           MaterialPageRoute(
+        //               builder: (context) => const NavigationMenu()));
+        //     },
+        //     icon: const Icon(
+        //       Icons.arrow_back_ios,
+        //       size: 20,
+        //       color: CupertinoColors.black,
+        //     )),
         Text('My Cart', style: textStyle21()),
         Container()
       ],
