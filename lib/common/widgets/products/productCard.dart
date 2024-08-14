@@ -46,7 +46,7 @@ class Productcard extends StatelessWidget {
                 ///---------Popular Products Title-----------
                 Padding(
                   padding: const EdgeInsets.only(left: 5),
-                  child: Text(product.title, style: textStyle3(),),
+                  child: Text(product.title, style: textStyle3(), maxLines: 1,),
                 ),
                 const SizedBox(height: 2),
 

@@ -66,6 +66,11 @@ flutter:
   assets:
     - assets/images/
     - assets/images/categories/
+    - assets/images/categories/electronics/
+    - assets/images/categories/mensFashion/
+    - assets/images/categories/womensFashion/
+    - assets/images/categories/shoes/
+    - assets/images/categories/beauty/
     - assets/images/products/
     - assets/icons/
   #   - images/a_dot_ham.jpeg

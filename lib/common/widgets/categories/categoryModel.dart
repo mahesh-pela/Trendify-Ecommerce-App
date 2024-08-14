@@ -22,7 +22,7 @@ class Category {
     ),
 
     Category(
-        image: 'assets/images/products/wireless headphone.png',
+        image: 'assets/images/categories/electronics/wireless headphone.png',
         title: 'Electronics'
     ),
 
@@ -30,21 +30,18 @@ class Category {
         image: 'assets/images/products/denim Jacket.png',
         title: "Men's Fashion"
     ),
+    Category(
+        image: 'assets/images/categories/womensFashion/womens fashion 4.jpg',
+        title: 'Womens Fashion'
+    ),
 
     Category(
-        image: 'assets/images/categories/beauty.jpg',
+        image: 'assets/images/categories/beauty/beauty.jpg',
         title: 'Beauty'
     ),
 
-    Category(
-        image: 'assets/images/categories/luggage.jpg',
-        title: 'Luggage'
-    ),
 
-    Category(
-        image: 'assets/images/categories/jewellery.jpg',
-        title: 'Jewellery'
-    ),
+
 
   ];
 
