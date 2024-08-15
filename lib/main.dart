@@ -5,7 +5,7 @@ import 'package:trendify/Screens/Favourite/favourite_provider.dart';
 import 'package:trendify/nav_var_screen.dart';
 import 'package:provider/provider.dart';
 
-import 'Screens/Login.dart';
+import 'Screens/Authentication/Login.dart';
 
 void main() {
   runApp(const MyApp());

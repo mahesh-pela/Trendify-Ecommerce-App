@@ -28,7 +28,7 @@ class Imageslider extends StatelessWidget {
               itemBuilder: (context, index){
                 return Image.asset(
                   imagePaths[index],
-                  fit: BoxFit.cover,
+                  fit: BoxFit.fill,
                 );
               },
             ),
@@ -40,7 +40,7 @@ class Imageslider extends StatelessWidget {
         Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: List.generate(3, (index) => AnimatedContainer(
-              duration: Duration(microseconds: 1000),
+              duration: Duration(microseconds: 300),
               width: currentSlide == index ?10:8,
               height: 8,
               margin: EdgeInsets.only(right: 3),

@@ -51,9 +51,9 @@ class _HomescreenState extends State<Homescreen> {
 
                 ///--------- Image File path-----------
               imagePaths: [
-                'assets/images/slider.jpg',
-                'assets/images/slider2.png',
-                'assets/images/slider3.png',
+                'assets/images/banner/super sale banner.jpg',
+                'assets/images/banner/slider2.png',
+                'assets/images/banner/slider.jpg',
               ],
               ),
               SizedBox(height: 12),

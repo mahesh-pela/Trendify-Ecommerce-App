@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:trendify/Screens/SignUP.dart';
+import 'package:trendify/Screens/Authentication/SignUP.dart';
 import 'package:trendify/common/styles/textThemeStyles.dart';
 import 'package:trendify/common/widgets/buttonWidget.dart';
 
-import '../common/widgets/socialMedia_buttons.dart';
+import '../../common/widgets/socialMedia_buttons.dart';
+import 'SignUP.dart';
 
 class Login extends StatefulWidget {
   @override
