@@ -111,3 +111,11 @@ TextStyle textStyle18White(){
     color: CupertinoColors.white
   );
 }
+
+TextStyle textStyle25(){
+  return const TextStyle(
+    fontSize: 25,
+    fontWeight: FontWeight.bold,
+    color: CupertinoColors.black
+  );
+}

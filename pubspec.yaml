@@ -70,6 +70,7 @@ flutter:
     - assets/images/categories/mensFashion/
     - assets/images/categories/womensFashion/
     - assets/images/categories/shoes/
+    - assets/images/categories/profile/
     - assets/images/categories/beauty/
     - assets/images/products/
     - assets/icons/
