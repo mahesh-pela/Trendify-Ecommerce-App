@@ -40,24 +40,119 @@ class Profile extends StatelessWidget {
 
               ///-----------logout section------------
               SizedBox(height: 10,),
+              ///----Personal INformation-------
               Container(
-                padding: EdgeInsets.all(10),
+                padding: EdgeInsets.only(left: 15, right: 15),
                 width: double.infinity,
-                height: 50,
+                height: 55,
                 decoration: BoxDecoration(
                   color: CupertinoColors.white,
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Icon(Icons.info_rounded),
                     SizedBox(width: 20,),
-                    Text('Personal Information', style: textStyle18(),),
-                    SizedBox(width: 80,),
+                    Expanded(child: Text('Personal Information', style: textStyle18(),)),
                     Transform.rotate(
                       angle: 3.14,
                         child: Icon(Icons.arrow_back_ios, color: Colors.grey.shade500,)
                     )
+                  ],
+                ),
+              ),
+              SizedBox(height: 20,),
+
+              ///------------Shipping Address----------
+              Container(
+                padding: EdgeInsets.only(left: 15, right: 15),
+                width: double.infinity,
+                height: 55,
+                decoration: BoxDecoration(
+                  color: CupertinoColors.white,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Icon(CupertinoIcons.location_solid),
+                    SizedBox(width: 20,),
+                    Expanded(child: Text('Shipping Address', style: textStyle18(),)),
+                    Transform.rotate(
+                      angle: 3.14,
+                        child: Icon(Icons.arrow_back_ios, color: Colors.grey.shade500,)
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 20,),
+
+              ///----------Order History-------------
+              Container(
+                padding: EdgeInsets.only(left: 15, right: 15),
+                width: double.infinity,
+                height: 55,
+                decoration: BoxDecoration(
+                  color: CupertinoColors.white,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Icon(CupertinoIcons.time_solid),
+                    SizedBox(width: 20,),
+                    Expanded(
+                        child: Text('Order History', style: textStyle18(),)
+                    ),
+                    Transform.rotate(
+                      angle: 3.14,
+                        child: Icon(Icons.arrow_back_ios, color: Colors.grey.shade500,)
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 20,),
+
+              ///---------Privacy Policy----------
+              Container(
+                padding: EdgeInsets.only(left: 15, right: 15),
+                width: double.infinity,
+                height: 55,
+                decoration: BoxDecoration(
+                  color: CupertinoColors.white,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Icon(Icons.privacy_tip),
+                    SizedBox(width: 20,),
+                    Expanded(child: Text('Privacy Policy', style: textStyle18(),)),
+                    Transform.rotate(
+                      angle: 3.14,
+                        child: Icon(Icons.arrow_back_ios, color: Colors.grey.shade500,)
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 20,),
+
+              ///----------Logout---------
+              Container(
+                padding: EdgeInsets.only(left: 15, right: 15),
+                width: double.infinity,
+                height: 55,
+                decoration: BoxDecoration(
+                  color: CupertinoColors.white,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Icon(Icons.login),
+                    SizedBox(width: 20,),
+                    Expanded(child: Text('Logout', style: textStyle18(),)),
                   ],
                 ),
               ),

@@ -65,7 +65,7 @@ class _CartScreenState extends State<CartScreen> {
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
                                     color: CupertinoColors.white),
-                                padding: EdgeInsets.all(10),
+                                padding: EdgeInsets.all(5),
 
                                 ///----------Contains the items in the container(image, title, category, price)
                                 child: Row(
@@ -87,27 +87,60 @@ class _CartScreenState extends State<CartScreen> {
                                     ),
 
                                     ///----- price, category and price-------------
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          cartItems.title,
-                                          style: textStyle16(),
-                                        ),
-                                        // const SizedBox(height: 5,),
-                                        Text(
-                                          cartItems.category,
-                                          style: grey_textStyle(),
-                                        ),
-                                        const SizedBox(
-                                          height: 5,
-                                        ),
-                                        Text(
-                                          "\$${cartItems.price}",
-                                          style: textStyle2(),
-                                        )
-                                      ],
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            cartItems.title,
+                                            style: textStyle16(),
+                                            maxLines: 1,
+                                            overflow: TextOverflow.ellipsis,
+                                          ),
+                                          // const SizedBox(height: 5,),
+                                          Text(
+                                            cartItems.category,
+                                            style: grey_textStyle(),
+                                          ),
+                                          const SizedBox(
+                                            height: 5,
+                                          ),
+                                          Text(
+                                            "\$${cartItems.price}",
+                                            style: textStyle2(),
+                                          ),
+                                          SizedBox(height: 5,),
+                                          Row(
+                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            children: [
+                                              Container(
+                                                height: 30,
+                                                decoration: BoxDecoration(
+                                                    color: Colors.grey.shade300,
+                                                    border: Border.all(
+                                                      color: Colors.grey.shade200,
+                                                      // width: 2
+                                                    ),
+                                                    borderRadius: BorderRadius.circular(20)
+                                                ),
+
+                                                ///-------Container that contains (+,-, quantity)
+                                                child: Row(
+                                                  children: [
+                                                    SizedBox(width: 10,),
+                                                    productQuantity(Icons.add, index),
+                                                    SizedBox(width: 10,),
+                                                    Text(cartItems.quantity.toString(), style: textStyle2(),),
+                                                    SizedBox(width: 10,),
+                                                    productQuantity(Icons.remove, index),
+                                                    SizedBox(width: 10,)
+                                                  ],
+                                                ),
+                                              )
+                                            ],
+                                          )
+                                        ],
+                                      ),
                                     )
                                   ],
                                 )),
@@ -115,7 +148,7 @@ class _CartScreenState extends State<CartScreen> {
 
                           ///---------delete button--------
                           Positioned(
-                              top: 20,
+                              top: 35,
                               right: 25,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -132,31 +165,6 @@ class _CartScreenState extends State<CartScreen> {
                                       size: 22,
                                     ),
                                   ),
-                                  SizedBox(height: 10,),
-                                  Container(
-                                    height: 35,
-                                    decoration: BoxDecoration(
-                                      color: Colors.grey.shade300,
-                                      border: Border.all(
-                                        color: Colors.grey.shade200,
-                                        // width: 2
-                                      ),
-                                      borderRadius: BorderRadius.circular(20)
-                                    ),
-
-                                    ///-------Container that contains (+,-, quantity)
-                                    child: Row(
-                                      children: [
-                                        SizedBox(width: 10,),
-                                        productQuantity(Icons.add, index),
-                                        SizedBox(width: 10,),
-                                        Text(cartItems.quantity.toString(), style: textStyle2(),),
-                                        SizedBox(width: 10,),
-                                        productQuantity(Icons.remove, index),
-                                        SizedBox(width: 10,)
-                                      ],
-                                    ),
-                                  )
 
                                   
                                 ],

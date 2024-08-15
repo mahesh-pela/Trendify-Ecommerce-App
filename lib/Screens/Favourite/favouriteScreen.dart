@@ -47,10 +47,11 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                                 color: CupertinoColors.white,
                                 borderRadius: BorderRadius.circular(20)),
 
-                            padding: const EdgeInsets.all(10),
+                            padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
 
                             ///---------Items inside the Container---------------
                             child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Container(
                                   width: 100,
@@ -67,22 +68,30 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                                 ),
 
                                 ///-------------Title,category and price--------
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(favouriteItems.title, style: textStyle16()),
-                                    Text(
-                                      favouriteItems.category,
-                                      style: grey_textStyle(),
-                                    ),
-                                    SizedBox(
-                                      height: 5,
-                                    ),
-                                    Text(
-                                      '\$${favouriteItems.price}',
-                                      style: textStyle2(),
-                                    )
-                                  ],
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        favouriteItems.title,
+                                        style: textStyle16(),
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                      Text(
+                                        favouriteItems.category,
+                                        style: grey_textStyle(),
+
+                                      ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      Text(
+                                        '\$${favouriteItems.price}',
+                                        style: textStyle2(),
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ],
                             ),
@@ -90,7 +99,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                         ),
 
                         Positioned(
-                            top: 40,
+                            top: 50,
                             right: 30,
                             child: IconButton(
                               onPressed: (){
