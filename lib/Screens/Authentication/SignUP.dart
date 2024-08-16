@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -16,8 +17,22 @@ class _SignupState extends State<Signup> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
 
-  void signUP(){
+  Future<void> signUP() async{
+    try{
+      String txtEmail = emailController.text;
+      String txtPass = passController.text;
 
+      final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: txtEmail, password: txtPass);
+    }on FirebaseAuthException catch(e){
+      if(e.code == 'weak-password'){
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('The password provided is too weak.')));
+      }
+      else if(e.code == 'email-already-in-use'){
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('The account already exists for that email.')));
+      }
+    }catch(e){
+      print(e);
+    }
   }
 
   @override

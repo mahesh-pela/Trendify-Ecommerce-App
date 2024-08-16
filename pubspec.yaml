@@ -39,6 +39,7 @@ dependencies:
   google_fonts: ^6.2.1
   carousel_slider: ^4.2.1
   provider: ^6.1.2
+  firebase_auth: ^5.1.4
 
 dev_dependencies:
   flutter_test:
