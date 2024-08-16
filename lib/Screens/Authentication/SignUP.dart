@@ -5,8 +5,20 @@ import 'package:trendify/common/styles/textThemeStyles.dart';
 import 'package:trendify/common/widgets/buttonWidget.dart';
 import 'package:trendify/common/widgets/socialMedia_buttons.dart';
 
-class Signup extends StatelessWidget {
+class Signup extends StatefulWidget {
   const Signup({super.key});
+
+  @override
+  State<Signup> createState() => _SignupState();
+}
+
+class _SignupState extends State<Signup> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passController = TextEditingController();
+
+  void signUP(){
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -79,6 +91,7 @@ class Signup extends StatelessWidget {
               Container(
                 child: TextField(
                   keyboardType: TextInputType.emailAddress,
+                  controller: emailController,
                   decoration: InputDecoration(
                     hintText: 'Email',
                     prefixIcon: Icon(Icons.email, color: Colors.grey.shade700,),
@@ -107,6 +120,7 @@ class Signup extends StatelessWidget {
               Container(
                 child: TextField(
                   obscureText: true,
+                  controller: passController,
                   decoration: InputDecoration(
                     hintText: 'Password',
                     prefixIcon: Icon(Iconsax.password_check, size: 20,),
